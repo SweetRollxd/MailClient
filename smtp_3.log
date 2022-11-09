@@ -1,0 +1,460 @@
+2022-11-09 14:31:40 [INFO]: Successfully connected to mail2.nstu.ru:587
+2022-11-09 14:31:40 [INFO]: Server: 220 mail.nstu.ru Microsoft ESMTP MAIL Service ready at Wed, 9 Nov 2022 14:31:39 +0700
+
+2022-11-09 14:32:26 [INFO]: Client: EHLO localhost
+2022-11-09 14:32:26 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-STARTTLS
+250-AUTH GSSAPI NTLM
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 14:32:26 [INFO]: Client: STARTTLS
+2022-11-09 14:32:26 [INFO]: Server: 220 2.0.0 SMTP server ready
+
+2022-11-09 14:32:26 [INFO]: Client: EHLO localhost
+2022-11-09 14:32:26 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-AUTH GSSAPI NTLM LOGIN
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 14:32:26 [INFO]: Client: AUTH LOGIN
+2022-11-09 14:32:26 [INFO]: Server: 334 VXNlcm5hbWU6
+
+2022-11-09 14:32:26 [INFO]: Client: c3V4aXguMjAxOEBzdHVkLm5zdHUucnU=
+2022-11-09 14:32:26 [INFO]: Server: 334 UGFzc3dvcmQ6
+
+2022-11-09 14:32:26 [INFO]: Disable logging...
+2022-11-09 14:32:26 [INFO]: Logging was enabled.
+2022-11-09 14:32:26 [INFO]: Client: MAIL FROM:suxix.2018@stud.nstu.ru
+2022-11-09 14:32:26 [INFO]: Server: 250 2.1.0 Sender OK
+
+2022-11-09 14:32:26 [INFO]: Client: RCPT TO:sukharik0720@gmail.com
+2022-11-09 14:32:26 [INFO]: Server: 250 2.1.5 Recipient OK
+
+2022-11-09 14:32:26 [INFO]: Client: RCPT TO:sukhikh0720@gmail.com
+2022-11-09 14:32:26 [INFO]: Server: 250 2.1.5 Recipient OK
+
+2022-11-09 14:32:26 [INFO]: Client: DATA
+2022-11-09 14:32:26 [INFO]: Server: 354 Start mail input; end with <CRLF>.<CRLF>
+
+2022-11-09 14:32:26 [INFO]: Client: FROM:suxix.2018@stud.nstu.ru
+TO:sukharik0720@gmail.com, sukhikh0720@gmail.com
+SUBJECT:Sending a letter
+2022-11-09 14:32:26 [INFO]: Client: 
+Hello!
+Lol
+Goodbye
+
+2022-11-09 14:32:26 [INFO]: Client: .
+2022-11-09 14:32:27 [INFO]: Server: 250 2.6.0 <ec2e0f0b-7198-4aae-855c-c425608357d4@ex-mbox-01.corp.nstu.ru> [InternalId=98767067939180, Hostname=ex-mbox-01.corp.nstu.ru] 1446 bytes in 0.219, 6,422 KB/sec Queued mail for delivery
+
+2022-11-09 14:32:27 [INFO]: Client: QUIT
+2022-11-09 14:32:27 [INFO]: Server: 221 2.0.0 Service closing transmission channel
+
+2022-11-09 14:38:37 [INFO]: Successfully connected to mail2.nstu.ru:587
+2022-11-09 14:38:37 [INFO]: Server: 220 mail.nstu.ru Microsoft ESMTP MAIL Service ready at Wed, 9 Nov 2022 14:38:37 +0700
+
+2022-11-09 14:39:02 [INFO]: Client: EHLO localhost
+2022-11-09 14:39:02 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-STARTTLS
+250-AUTH GSSAPI NTLM
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 14:39:02 [INFO]: Client: STARTTLS
+2022-11-09 14:39:02 [INFO]: Server: 220 2.0.0 SMTP server ready
+
+2022-11-09 14:39:02 [INFO]: Client: EHLO localhost
+2022-11-09 14:39:02 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-AUTH GSSAPI NTLM LOGIN
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 14:39:02 [INFO]: Client: AUTH LOGIN
+2022-11-09 14:39:02 [INFO]: Server: 334 VXNlcm5hbWU6
+
+2022-11-09 14:39:02 [INFO]: Client: c3V4aXguMjAxOEBzdHVkLm5zdHUucnVp
+2022-11-09 14:39:02 [INFO]: Server: 334 UGFzc3dvcmQ6
+
+2022-11-09 14:39:02 [INFO]: Disable logging...
+2022-11-09 14:44:24 [INFO]: Successfully connected to mail2.nstu.ru:587
+2022-11-09 14:44:24 [INFO]: Server: 220 mail.nstu.ru Microsoft ESMTP MAIL Service ready at Wed, 9 Nov 2022 14:44:24 +0700
+
+2022-11-09 14:46:04 [INFO]: Successfully connected to mail2.nstu.ru:587
+2022-11-09 14:46:04 [INFO]: Server: 220 mail.nstu.ru Microsoft ESMTP MAIL Service ready at Wed, 9 Nov 2022 14:46:04 +0700
+
+2022-11-09 14:47:43 [INFO]: Client: EHLO localhost
+2022-11-09 14:47:43 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-STARTTLS
+250-AUTH GSSAPI NTLM
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 14:47:43 [INFO]: Client: STARTTLS
+2022-11-09 14:47:43 [INFO]: Server: 220 2.0.0 SMTP server ready
+
+2022-11-09 14:47:44 [INFO]: Client: EHLO localhost
+2022-11-09 14:47:44 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-AUTH GSSAPI NTLM LOGIN
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 14:47:44 [INFO]: Client: AUTH LOGIN
+2022-11-09 14:47:44 [INFO]: Server: 334 VXNlcm5hbWU6
+
+2022-11-09 14:47:44 [INFO]: Client: c3V4aXguMjAxOEBzdHVkLm5zdHUucnU=
+2022-11-09 14:47:44 [INFO]: Server: 334 UGFzc3dvcmQ6
+
+2022-11-09 14:47:44 [INFO]: Disable logging...
+2022-11-09 14:47:44 [INFO]: Logging was enabled.
+2022-11-09 14:47:44 [INFO]: Client: MAIL FROM:suxix.2018@stud.nstu.ru
+2022-11-09 14:47:44 [INFO]: Server: 250 2.1.0 Sender OK
+
+2022-11-09 14:47:44 [INFO]: Client: RCPT TO:sukhikh0720@gmail.com
+2022-11-09 14:47:44 [INFO]: Server: 250 2.1.5 Recipient OK
+
+2022-11-09 14:47:44 [INFO]: Client: RCPT TO:sukharik0720@gmail.com
+2022-11-09 14:47:44 [INFO]: Server: 250 2.1.5 Recipient OK
+
+2022-11-09 14:47:44 [INFO]: Client: DATA
+2022-11-09 14:47:44 [INFO]: Server: 354 Start mail input; end with <CRLF>.<CRLF>
+
+2022-11-09 14:47:44 [INFO]: Client: FROM:suxix.2018@stud.nstu.ru
+TO:sukhikh0720@gmail.com, sukharik0720@gmail.com
+SUBJECT:Testing an SMTP app
+2022-11-09 14:47:44 [INFO]: Client: 
+Hello!
+Lol
+Kek
+Goodbye
+
+2022-11-09 14:47:44 [INFO]: Client: .
+2022-11-09 14:47:44 [INFO]: Server: 250 2.6.0 <a35ae784-b974-443d-8bb4-cbe9e61ae0df@ex-mbox-01.corp.nstu.ru> [InternalId=98767067939344, Hostname=ex-mbox-01.corp.nstu.ru] 1458 bytes in 0.216, 6,579 KB/sec Queued mail for delivery
+
+2022-11-09 14:47:44 [INFO]: Client: QUIT
+2022-11-09 14:47:44 [INFO]: Server: 221 2.0.0 Service closing transmission channel
+
+2022-11-09 14:47:44 [INFO]: Letter was sent successfully!
+2022-11-09 15:09:41 [INFO]: Successfully connected to mail2.nstu.ru:587
+2022-11-09 15:09:41 [INFO]: Server: 220 mail.nstu.ru Microsoft ESMTP MAIL Service ready at Wed, 9 Nov 2022 15:09:40 +0700
+
+2022-11-09 15:10:17 [INFO]: Client: EHLO localhost
+2022-11-09 15:10:18 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-STARTTLS
+250-AUTH GSSAPI NTLM
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 15:10:18 [INFO]: Client: STARTTLS
+2022-11-09 15:10:18 [INFO]: Server: 220 2.0.0 SMTP server ready
+
+2022-11-09 15:10:18 [INFO]: Client: EHLO localhost
+2022-11-09 15:10:18 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-AUTH GSSAPI NTLM LOGIN
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 15:10:18 [INFO]: Client: AUTH LOGIN
+2022-11-09 15:10:18 [INFO]: Server: 334 VXNlcm5hbWU6
+
+2022-11-09 15:10:18 [INFO]: Client: c3V4aXguMjAxOEBzdHVkLm5zdHUucnU=
+2022-11-09 15:10:18 [INFO]: Server: 334 UGFzc3dvcmQ6
+
+2022-11-09 15:10:18 [INFO]: Disable logging...
+2022-11-09 15:10:18 [INFO]: Logging was enabled.
+2022-11-09 15:10:18 [INFO]: Client: MAIL FROM:suxix.2018@stud.nstu.ru
+2022-11-09 15:10:18 [INFO]: Server: 250 2.1.0 Sender OK
+
+2022-11-09 15:10:18 [INFO]: Client: RCPT TO:sukharik0720@gmail.com
+2022-11-09 15:10:18 [INFO]: Server: 250 2.1.5 Recipient OK
+
+2022-11-09 15:10:18 [INFO]: Client: DATA
+2022-11-09 15:10:18 [INFO]: Server: 354 Start mail input; end with <CRLF>.<CRLF>
+
+2022-11-09 15:10:18 [INFO]: Client: FROM:suxix.2018@stud.nstu.ru
+TO:sukharik0720@gmail.com
+SUBJECT:SMTP test
+2022-11-09 15:10:18 [INFO]: Client: 
+Heh
+Mda 
+
+2022-11-09 15:10:18 [INFO]: Client: .
+2022-11-09 15:10:18 [INFO]: Server: 250 2.6.0 <f24a1da0-4a17-494a-b3d7-32c1a0dddc1b@ex-mbox-01.corp.nstu.ru> [InternalId=98771362906245, Hostname=ex-mbox-01.corp.nstu.ru] 1400 bytes in 0.220, 6,213 KB/sec Queued mail for delivery
+
+2022-11-09 15:10:18 [INFO]: Client: QUIT
+2022-11-09 15:10:18 [INFO]: Server: 221 2.0.0 Service closing transmission channel
+
+2022-11-09 15:10:18 [INFO]: Letter was sent successfully!
+2022-11-09 15:11:15 [INFO]: Client: EHLO localhost
+2022-11-09 15:11:15 [ERROR]: Unexpected exception: EOF occurred in violation of protocol (_ssl.c:2396)
+2022-11-09 15:11:15 [INFO]: Connection closed
+___________________
+
+
+
+2022-11-09 15:17:47 [INFO]: Successfully connected to mail2.nstu.ru:587
+2022-11-09 15:17:47 [INFO]: Server: 220 mail.nstu.ru Microsoft ESMTP MAIL Service ready at Wed, 9 Nov 2022 15:17:47 +0700
+
+2022-11-09 15:17:47 [INFO]: Client: EHLO localhost
+2022-11-09 15:17:47 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-STARTTLS
+250-AUTH GSSAPI NTLM
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 15:17:47 [INFO]: Client: STARTTLS
+2022-11-09 15:17:47 [INFO]: Server: 220 2.0.0 SMTP server ready
+
+2022-11-09 15:17:47 [INFO]: Client: EHLO localhost
+2022-11-09 15:17:47 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-AUTH GSSAPI NTLM LOGIN
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 15:17:47 [INFO]: Client: AUTH LOGIN
+2022-11-09 15:17:47 [INFO]: Server: 334 VXNlcm5hbWU6
+
+2022-11-09 15:17:47 [INFO]: Client: c3V4aXguMjAxOEBzdHVkLm5zdHUucnU=
+2022-11-09 15:17:47 [INFO]: Server: 334 UGFzc3dvcmQ6
+
+2022-11-09 15:17:47 [INFO]: Disable logging...
+2022-11-09 15:17:48 [INFO]: Logging was enabled.
+2022-11-09 15:17:48 [INFO]: Client: MAIL FROM:suxix.2018@stud.nstu.ru
+2022-11-09 15:17:48 [INFO]: Server: 250 2.1.0 Sender OK
+
+2022-11-09 15:17:48 [INFO]: Client: RCPT TO:sukharik0720@gmail.com
+2022-11-09 15:17:48 [INFO]: Server: 250 2.1.5 Recipient OK
+
+2022-11-09 15:17:48 [INFO]: Client: DATA
+2022-11-09 15:17:48 [INFO]: Server: 354 Start mail input; end with <CRLF>.<CRLF>
+
+2022-11-09 15:17:48 [INFO]: Client: FROM:suxix.2018@stud.nstu.ru
+TO:sukharik0720@gmail.com
+SUBJECT:Test SMTP
+2022-11-09 15:17:48 [INFO]: Client: 
+Lol
+Kek
+
+2022-11-09 15:17:48 [INFO]: Client: .
+2022-11-09 15:17:48 [INFO]: Server: 250 2.6.0 <793b60c2-2768-41a4-bf87-1a50f06e0ba1@ex-mbox-01.corp.nstu.ru> [InternalId=98771362906304, Hostname=ex-mbox-01.corp.nstu.ru] 1399 bytes in 0.220, 6,191 KB/sec Queued mail for delivery
+
+2022-11-09 15:17:48 [INFO]: Client: QUIT
+2022-11-09 15:17:48 [INFO]: Server: 221 2.0.0 Service closing transmission channel
+
+2022-11-09 15:17:48 [INFO]: Letter was sent successfully!
+2022-11-09 15:18:16 [INFO]: Successfully connected to mail2.nstu.ru:587
+2022-11-09 15:18:16 [INFO]: Server: 220 mail.nstu.ru Microsoft ESMTP MAIL Service ready at Wed, 9 Nov 2022 15:18:15 +0700
+
+2022-11-09 15:18:16 [INFO]: Client: EHLO localhost
+2022-11-09 15:18:16 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-STARTTLS
+250-AUTH GSSAPI NTLM
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 15:18:16 [INFO]: Client: STARTTLS
+2022-11-09 15:18:16 [INFO]: Server: 220 2.0.0 SMTP server ready
+
+2022-11-09 15:18:16 [INFO]: Client: EHLO localhost
+2022-11-09 15:18:17 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-AUTH GSSAPI NTLM LOGIN
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 15:18:17 [INFO]: Client: AUTH LOGIN
+2022-11-09 15:18:17 [INFO]: Server: 334 VXNlcm5hbWU6
+
+2022-11-09 15:18:17 [INFO]: Client: c3V4aXguMjAxOEBzdHVkLm5zdHUucnU=
+2022-11-09 15:18:17 [INFO]: Server: 334 UGFzc3dvcmQ6
+
+2022-11-09 15:18:17 [INFO]: Disable logging...
+2022-11-09 15:18:17 [INFO]: Logging was enabled.
+2022-11-09 15:18:17 [INFO]: Client: MAIL FROM:suxix.2018@stud.nstu.ru
+2022-11-09 15:18:17 [INFO]: Server: 250 2.1.0 Sender OK
+
+2022-11-09 15:18:17 [INFO]: Client: RCPT TO:sukharik@ngs.ru
+2022-11-09 15:18:17 [INFO]: Server: 250 2.1.5 Recipient OK
+
+2022-11-09 15:18:17 [INFO]: Client: DATA
+2022-11-09 15:18:17 [INFO]: Server: 354 Start mail input; end with <CRLF>.<CRLF>
+
+2022-11-09 15:18:17 [INFO]: Client: FROM:suxix.2018@stud.nstu.ru
+TO:sukharik@ngs.ru
+SUBJECT:Kek SMTP test
+2022-11-09 15:18:17 [INFO]: Client: 
+Heh
+Mda
+Yeaaaaah
+
+2022-11-09 15:18:17 [INFO]: Client: .
+2022-11-09 15:18:17 [INFO]: Server: 250 2.6.0 <c04c5326-1ef1-405e-b9df-51d2c553b451@ex-mbox-01.corp.nstu.ru> [InternalId=98771362906306, Hostname=ex-mbox-01.corp.nstu.ru] 1410 bytes in 0.217, 6,344 KB/sec Queued mail for delivery
+
+2022-11-09 15:18:17 [INFO]: Client: QUIT
+2022-11-09 15:18:17 [INFO]: Server: 221 2.0.0 Service closing transmission channel
+
+2022-11-09 15:18:17 [INFO]: Letter was sent successfully!
+2022-11-09 15:37:08 [INFO]: Successfully connected to mail2.nstu.ru:587
+2022-11-09 15:37:08 [INFO]: Server: 220 mail.nstu.ru Microsoft ESMTP MAIL Service ready at Wed, 9 Nov 2022 15:37:07 +0700
+
+2022-11-09 15:37:08 [INFO]: Client: EHLO localhost
+2022-11-09 15:37:08 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-STARTTLS
+250-AUTH GSSAPI NTLM
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 15:37:08 [INFO]: Client: STARTTLS
+2022-11-09 15:37:08 [INFO]: Server: 220 2.0.0 SMTP server ready
+
+2022-11-09 15:37:08 [INFO]: Client: EHLO localhost
+2022-11-09 15:37:08 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-AUTH GSSAPI NTLM LOGIN
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 15:37:08 [INFO]: Client: AUTH LOGIN
+2022-11-09 15:37:08 [INFO]: Server: 334 VXNlcm5hbWU6
+
+2022-11-09 15:37:08 [INFO]: Client: c3V4aXguMjAxOEBzdHVkLm5zdHUucnU=
+2022-11-09 15:37:08 [INFO]: Server: 334 UGFzc3dvcmQ6
+
+2022-11-09 15:37:08 [INFO]: Disable logging...
+2022-11-09 15:37:08 [INFO]: Logging was enabled.
+2022-11-09 15:37:08 [INFO]: Client: MAIL FROM:suxix.2018@stud.nstu.ru
+2022-11-09 15:37:08 [INFO]: Server: 250 2.1.0 Sender OK
+
+2022-11-09 15:37:08 [INFO]: Client: RCPT TO:sukharik0720@gmail.com
+2022-11-09 15:37:08 [INFO]: Server: 250 2.1.5 Recipient OK
+
+2022-11-09 15:37:08 [INFO]: Client: RCPT TO:sukhikh0720@gmail.com
+2022-11-09 15:37:08 [INFO]: Server: 250 2.1.5 Recipient OK
+
+2022-11-09 15:37:08 [INFO]: Client: DATA
+2022-11-09 15:37:08 [INFO]: Server: 354 Start mail input; end with <CRLF>.<CRLF>
+
+2022-11-09 15:37:08 [INFO]: Client: FROM:suxix.2018@stud.nstu.ru
+TO:sukharik0720@gmail.com, sukhikh0720@gmail.com
+SUBJECT:Final test SMTL
+2022-11-09 15:37:08 [INFO]: Client: 
+Gigachad Dr Livesey
+That's all
+Goodbye
+
+2022-11-09 15:37:08 [INFO]: Client: .
+2022-11-09 15:37:09 [INFO]: Server: 250 2.6.0 <a86ffb3d-bd3e-4d94-9c92-6f4c955a2c6a@ex-mbox-01.corp.nstu.ru> [InternalId=98771362906558, Hostname=ex-mbox-01.corp.nstu.ru] 1465 bytes in 0.221, 6,445 KB/sec Queued mail for delivery
+
+2022-11-09 15:37:09 [INFO]: Client: QUIT
+2022-11-09 15:37:09 [INFO]: Server: 221 2.0.0 Service closing transmission channel
+
+2022-11-09 15:37:09 [INFO]: Letter was sent successfully!
+2022-11-09 15:37:09 [INFO]: Connection closed
+___________________
+
+
+
+2022-11-09 15:48:19 [INFO]: Successfully connected to mail2.nstu.ru:587
+2022-11-09 15:48:19 [INFO]: Server: 220 mail.nstu.ru Microsoft ESMTP MAIL Service ready at Wed, 9 Nov 2022 15:48:18 +0700
+
+2022-11-09 15:48:19 [INFO]: Client: EHLO localhost
+2022-11-09 15:48:19 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-STARTTLS
+250-AUTH GSSAPI NTLM
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 15:48:19 [INFO]: Client: STARTTLS
+2022-11-09 15:48:19 [INFO]: Server: 220 2.0.0 SMTP server ready
+
+2022-11-09 15:48:19 [INFO]: Client: EHLO localhost
+2022-11-09 15:48:19 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-AUTH GSSAPI NTLM LOGIN
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 15:48:19 [INFO]: Client: AUTH LOGIN
+2022-11-09 15:48:19 [INFO]: Server: 334 VXNlcm5hbWU6
+
+2022-11-09 15:48:19 [INFO]: Client: aGVo
+2022-11-09 15:48:19 [INFO]: Server: 334 UGFzc3dvcmQ6
+
+2022-11-09 15:48:19 [INFO]: Disable logging...
