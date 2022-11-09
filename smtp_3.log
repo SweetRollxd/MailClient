@@ -458,3 +458,68 @@ ___________________
 2022-11-09 15:48:19 [INFO]: Server: 334 UGFzc3dvcmQ6
 
 2022-11-09 15:48:19 [INFO]: Disable logging...
+2022-11-09 16:04:44 [INFO]: Successfully connected to mail2.nstu.ru:587
+2022-11-09 16:04:44 [INFO]: Server: 220 mail.nstu.ru Microsoft ESMTP MAIL Service ready at Wed, 9 Nov 2022 16:04:43 +0700
+
+2022-11-09 16:04:44 [INFO]: Client: EHLO localhost
+2022-11-09 16:04:44 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-STARTTLS
+250-AUTH GSSAPI NTLM
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 16:04:44 [INFO]: Client: STARTTLS
+2022-11-09 16:04:44 [INFO]: Server: 220 2.0.0 SMTP server ready
+
+2022-11-09 16:04:44 [INFO]: Client: EHLO localhost
+2022-11-09 16:04:44 [INFO]: Server: 250-mail.nstu.ru Hello [10.0.60.1]
+250-SIZE 37748736
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-AUTH GSSAPI NTLM LOGIN
+250-8BITMIME
+250-BINARYMIME
+250 CHUNKING
+
+2022-11-09 16:04:44 [INFO]: Client: AUTH LOGIN
+2022-11-09 16:04:44 [INFO]: Server: 334 VXNlcm5hbWU6
+
+2022-11-09 16:04:44 [INFO]: Client: c3V4aXguMjAxOEBzdHVkLm5zdHUucnU=
+2022-11-09 16:04:44 [INFO]: Server: 334 UGFzc3dvcmQ6
+
+2022-11-09 16:04:44 [INFO]: Disable logging...
+2022-11-09 16:04:44 [INFO]: Logging was enabled.
+2022-11-09 16:04:44 [INFO]: Client: MAIL FROM:suxix.2018@stud.nstu.ru
+2022-11-09 16:04:44 [INFO]: Server: 250 2.1.0 Sender OK
+
+2022-11-09 16:04:44 [INFO]: Client: RCPT TO:sukharik0720@gmail.com
+2022-11-09 16:04:44 [INFO]: Server: 250 2.1.5 Recipient OK
+
+2022-11-09 16:04:44 [INFO]: Client: DATA
+2022-11-09 16:04:44 [INFO]: Server: 354 Start mail input; end with <CRLF>.<CRLF>
+
+2022-11-09 16:04:44 [INFO]: Client: FROM:suxix.2018@stud.nstu.ru
+TO:sukharik0720@gmail.com
+SUBJECT:Another test submodule
+2022-11-09 16:04:44 [INFO]: Client: 
+Kek
+Mda
+
+2022-11-09 16:04:44 [INFO]: Client: .
+2022-11-09 16:04:44 [INFO]: Server: 250 2.6.0 <693b7e16-e98c-41d8-a538-ebabc15705a2@ex-mbox-01.corp.nstu.ru> [InternalId=98775657873471, Hostname=ex-mbox-01.corp.nstu.ru] 1413 bytes in 0.223, 6,173 KB/sec Queued mail for delivery
+
+2022-11-09 16:04:44 [INFO]: Client: QUIT
+2022-11-09 16:04:45 [INFO]: Server: 221 2.0.0 Service closing transmission channel
+
+2022-11-09 16:04:45 [INFO]: Letter was sent successfully!
+2022-11-09 16:04:45 [INFO]: Connection closed
+___________________
+
+
+
