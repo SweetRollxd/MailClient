@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 *.log
+=======
+*.log
+.msg/
+>>>>>>> 7fd874a (POP3 client retrieving messages)
