@@ -201,9 +201,10 @@ def application():
     app = QApplication(sys.argv)
     window = ClientWindow()
     window.show()
-    window.get_messages()
     if not window.settings.value('login'):
         window.settings_open()
+    window.get_messages()
+
 
     window.refresh()
     sys.exit(app.exec_())
