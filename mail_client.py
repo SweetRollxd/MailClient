@@ -2,6 +2,7 @@ import os
 
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets, QtCore
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QLineEdit
 import sys
 import email
@@ -75,7 +76,9 @@ class ClientWindow(QMainWindow):
     def settings_open(self):
         self.settings_window = SettingsWindow()
         # self.settings.saveClicked.connect(self.update_settings)
+        self.settings_window.setWindowModality(Qt.ApplicationModal)
         self.settings_window.show()
+
         
     def refresh(self):
         self.download_messages()
@@ -204,7 +207,6 @@ def application():
     if not window.settings.value('login'):
         window.settings_open()
     window.get_messages()
-
 
     window.refresh()
     sys.exit(app.exec_())
