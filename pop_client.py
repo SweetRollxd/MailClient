@@ -4,6 +4,7 @@ import ssl
 import traceback
 import getpass
 import email
+import os
 from email import header as email_header
 
 from logger import FileLogger
@@ -15,14 +16,38 @@ host = 'pop.yandex.ru'
 port = 995
 bufsize = 1024
 
-"""
-Разработайте клиентское приложение для отправки текстовых сообщений по протоколу SMTP с учетом следующих требований:
-    1. все команды и данные должен вводить пользователь (адреса получателя и отправителя, текст сообщения);  
-    2. подключение к почтовому серверу реализовать на основе сокетов;
-    3. приложение должно формировать строки команд в соответствии с протоколом SMTP, выводить их на экран и 
-        отправлять на сервер. Ответы сервера также должны выводиться на экран. 
-    4. весь процесс почтовой сессии должен сохраняться в файле журнала smtp_Х.log
-"""
+
+def read_message_from_file(path, without_body=False):
+    message_file = open(path, 'r')
+    email_msg = email.message_from_file(message_file)
+    msg_data = {}
+    for key in ('from', 'to', 'subject', 'date'):
+        if key == 'subject':
+            header, encoding = email_header.decode_header(email_msg[key])[0]
+            if encoding:
+                msg_data[key] = header.decode(encoding)
+            else:
+                msg_data[key] = email_msg[key]
+        # elif key == 'date':
+        #     msg_data[key] = datetime.datetime.strptime(email_msg[key].rstrip(), '%a, %d %b %Y %H:%M:%S %z')
+        else:
+            msg_data[key] = email_msg[key]
+
+    if not without_body:
+        msg_body = ''
+        if email_msg.is_multipart():
+            for msg in email_msg.walk():
+                if msg.get_content_type() == 'text/plain':
+                    email_msg = msg
+                    break
+
+        if email_msg['Content-Transfer-Encoding'] in ('base64', 'quoted-printable'):
+            msg_body = email_msg.get_payload(decode=True).decode('utf-8')
+        else:
+            msg_body = msg_body = email_msg.get_payload()
+
+        msg_data['body'] = msg_body
+    return msg_data
 
 
 class POPClientException(Exception):
@@ -33,23 +58,11 @@ class POPClientException(Exception):
 
 
 class POPClient:
-    """
-    Класс SMTP клиента.
-    Атрибуты класса:
-    __logfile - объект класса FileLogger для логирования сообщений между клиентом и сервером;
-    server_host - адрес SMTP сервера;
-    server_port - порт SMTP сервера;
-    login - логин пользователя отправителя;
-    password - его пароль
-    client_sock - сокет клиента
-    use_tls - признак использования шифрования
-    Двойное подчеркивание __ означает приватный атрибут или метод
-    """
     messages_dir = '.msg/'
 
     def __init__(self, server_host, server_port, login, password):
         """
-        Конструктор класса. Инициализирует объект класса при вызове SMTPClient() c переданными параметрами
+        Конструктор класса. Инициализирует объект класса при вызове POPClient() c переданными параметрами
 
         :param server_host: адрес сервера
         :param server_port: порт сервера
@@ -177,8 +190,6 @@ class POPClient:
                     break
                 msg_info = msg_info.split(' ')
                 msg_list.append({'id': int(msg_info[0]), 'size': int(msg_info[1].rstrip())})
-            # self.__recv()
-            # self.__client_sock.recv(bufsize).decode('utf-8')
             print(f"Msg list: {msg_list}")
 
             for msg in msg_list:
@@ -220,5 +231,42 @@ if __name__ == "__main__":
     # создаем экземпляр класса
     client = POPClient(host, port, login, password)
     client.get_messages()
+    
+    command_list = ('show', 'del')
+    while True:
+      try:
 
-    client.read_message_from_file('4849151669057440@mail.yandex.ru')
+        msg_list = os.listdir('.msg/')
+        if not msg_list:
+            print("No messages are available")
+            exit()
+
+        print("Current inbox:")
+        msg_info_list = []
+        for i, file in enumerate(msg_list):
+            print(file)
+            msg_data = read_message_from_file(".msg/" + file, without_body=True)
+            print(f"[{i}]: {msg_data['date']} From {msg_data['from']} To {msg_data['to']}. Subject: {msg_data['subject']}")
+            #print(msg_data['body'])
+            msg_data['local_id'] = i
+            msg_data['msg_file'] = file
+            msg_info_list.append(msg_data)
+        command, arg = input(f"Input a command. Available commands: {command_list}\nExamples: show 1; del 3. ").split(" ")
+        
+        if command == "show":
+          msg_data = read_message_from_file(f"./.msg/{msg_info_list[int(arg)]['msg_file']}")
+          print(f"From: {msg_data['from']}")
+          print(f"To: {msg_data['to']}")
+          print(f"Subject: {msg_data['subject']}")
+          print(f"Body: {msg_data['body']}")
+        elif command == "del":
+          msg_data = os.remove(f"./.msg/{msg_info_list[int(arg)]['msg_file']}")
+      except EOFError:
+          print("\nGoodbye!")
+          break
+      except Exception as e:
+          print("Unexpected exception caught:", e)
+          print(traceback.format_exc())
+          print("Terminating...")
+          exit(code=1)
+

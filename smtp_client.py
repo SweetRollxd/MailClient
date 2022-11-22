@@ -43,7 +43,7 @@ class SMTPClient:
     use_tls - признак использования шифрования
     Двойное подчеркивание __ означает приватный атрибут или метод
     """
-    __logfile = FileLogger(log_filename)
+
 
     def __init__(self, server_host, server_port, login, password):
         """
@@ -58,6 +58,7 @@ class SMTPClient:
         self.server_port = server_port
         self.login = login
         self.password = password
+        self.__logfile = FileLogger(log_filename)
 
     def __create_socket_connection(self):
         """
@@ -159,6 +160,7 @@ class SMTPClient:
             # указываем отправителя
             self.__send_cmd(f"MAIL FROM:{sender}")
             # получателей в цикле передаем каждого отдельной командой
+            print(f"Recipients {recipients}")
             if type(recipients) is list:
                 for recipient in recipients:
                     self.__send_cmd(f"RCPT TO:{recipient}")

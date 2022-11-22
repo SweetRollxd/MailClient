@@ -14,39 +14,6 @@ import smtp_client as smtp
 import pop_client as pop
 
 
-def read_message_from_file(path, without_body=False):
-    message_file = open(path, 'r')
-    email_msg = email.message_from_file(message_file)
-    msg_data = {}
-    for key in ('from', 'to', 'subject', 'date'):
-        if key == 'subject':
-            header, encoding = email_header.decode_header(email_msg[key])[0]
-            if encoding:
-                msg_data[key] = header.decode(encoding)
-            else:
-                msg_data[key] = email_msg[key]
-        # elif key == 'date':
-        #     msg_data[key] = datetime.datetime.strptime(email_msg[key].rstrip(), '%a, %d %b %Y %H:%M:%S %z')
-        else:
-            msg_data[key] = email_msg[key]
-
-    if not without_body:
-        msg_body = ''
-        if email_msg.is_multipart():
-            for msg in email_msg.walk():
-                if msg.get_content_type() == 'text/plain':
-                    email_msg = msg
-                    break
-
-        if email_msg['Content-Transfer-Encoding'] in ('base64', 'quoted-printable'):
-            msg_body = email_msg.get_payload(decode=True).decode('utf-8')
-        else:
-            msg_body = msg_body = email_msg.get_payload()
-
-        msg_data['body'] = msg_body
-    return msg_data
-
-
 class ClientWindow(QMainWindow):
     settings = QtCore.QSettings("SIT Brigade 3", "Mail Client")
     msg_dir = ".msg/"
@@ -111,7 +78,7 @@ class ClientWindow(QMainWindow):
         self.msg_info_list = []
         for row, file in enumerate(msg_list):
             print(file)
-            msg_data = read_message_from_file(self.msg_dir + file, without_body=True)
+            msg_data = pop.read_message_from_file(self.msg_dir + file, without_body=True)
             self.msgTable.setItem(row, 0, QtWidgets.QTableWidgetItem(msg_data['from']))
             self.msgTable.setItem(row, 1, QtWidgets.QTableWidgetItem(msg_data['subject']))
             self.msgTable.setItem(row, 2, QtWidgets.QTableWidgetItem(msg_data['date']))
@@ -172,7 +139,7 @@ class MessageInspector(QWidget):
     def __init__(self, msg_file):
         super(MessageInspector, self).__init__()
         loadUi("design/message_inspector.ui", self)
-        msg_data = read_message_from_file(msg_file)
+        msg_data = pop.read_message_from_file(msg_file)
         self.txtbox_from.setText(msg_data['from'])
         self.txtbox_to.setText(msg_data['to'])
         self.txtbox_subj.setText(msg_data['subject'])
@@ -185,6 +152,7 @@ class MessageForm(QWidget):
     def __init__(self):
         super(MessageForm, self).__init__()
         loadUi("design/message_form.ui", self)
+        self.txtbox_from.setText(self.settings.value('login'))
         self.btn_send.clicked.connect(self.send_message)
 
     def send_message(self):
@@ -192,9 +160,9 @@ class MessageForm(QWidget):
                                         int(self.settings.value('smtp_port')),
                                         self.settings.value('login'),
                                         self.settings.value('password'))
-        print(self.txtbox_to.text())
+
         res = client.send_letter(self.txtbox_from.text(),
-                                 self.txtbox_to.text(),
+                                 self.txtbox_to.text().replace(" ", "").split(','),
                                  self.txtbox_subj.text(),
                                  self.txtbox_body.toPlainText())
         if res == 0:
