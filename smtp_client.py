@@ -8,8 +8,10 @@ from logger import FileLogger
 
 log_filename = "smtp_3.log"
 host = 'mail2.nstu.ru'
-# host = 'smtp.freesmtpservers.com'
 port = 587
+# host = 'smtp.yandex.ru'
+# port = 465
+
 
 """
 Разработайте клиентское приложение для отправки текстовых сообщений по протоколу SMTP с учетом следующих требований:
@@ -72,7 +74,7 @@ class SMTPClient:
         self.__logfile.write_log(server_log)
 
         # использовать шифрование или нет определяется по порту
-        self.use_tls = True if self.server_port == 587 else False
+        self.use_tls = True if self.server_port in (465, 587) else False
 
     def __create_ssl_socket(self):
         """
@@ -157,8 +159,11 @@ class SMTPClient:
             # указываем отправителя
             self.__send_cmd(f"MAIL FROM:{sender}")
             # получателей в цикле передаем каждого отдельной командой
-            for recipient in recipients:
-                self.__send_cmd(f"RCPT TO:{recipient}")
+            if type(recipients) is list:
+                for recipient in recipients:
+                    self.__send_cmd(f"RCPT TO:{recipient}")
+            else:
+                self.__send_cmd(f"RCPT TO:{recipients}")
 
             # отправляем тело с нужными заголовками
             self.__send_cmd("DATA")

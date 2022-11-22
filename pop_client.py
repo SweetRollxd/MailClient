@@ -5,7 +5,6 @@ import traceback
 import getpass
 import email
 from email import header as email_header
-import quopri
 
 from logger import FileLogger
 
@@ -46,7 +45,6 @@ class POPClient:
     use_tls - признак использования шифрования
     Двойное подчеркивание __ означает приватный атрибут или метод
     """
-    __logfile = FileLogger(log_filename)
     messages_dir = '.msg/'
 
     def __init__(self, server_host, server_port, login, password):
@@ -62,6 +60,7 @@ class POPClient:
         self.server_port = server_port
         self.login = login
         self.password = password
+        self.__logfile = FileLogger(log_filename)
         self.use_tls = True if self.server_port == 995 else False
 
     def __create_socket_connection(self):
@@ -126,35 +125,6 @@ class POPClient:
         with open(self.messages_dir + msg_id, 'w') as file:
             file.write(msg_data)
 
-    def read_message_from_file(self, msg_id):
-        message_file = open(self.messages_dir + msg_id, 'r')
-        email_msg = email.message_from_file(message_file)
-        msg_data = {}
-        for key in ('from', 'to', 'subject', 'date'):
-            if key == 'subject':
-                header, encoding = email_header.decode_header(email_msg[key])[0]
-                if encoding:
-                    msg_data[key] = header.decode(encoding)
-                else:
-                    msg_data[key] = email_msg[key]
-            else:
-                msg_data[key] = email_msg[key]
-
-        msg_body = ''
-        if email_msg.is_multipart():
-            for msg in email_msg.walk():
-                if msg.get_content_type() == 'text/plain':
-                    email_msg = msg
-                    break
-
-        if email_msg['Content-Transfer-Encoding'] in ('base64', 'quoted-printable'):
-            msg_body = email_msg.get_payload(decode=True).decode('utf-8')
-        else:
-            msg_body = msg_body = email_msg.get_payload()
-
-        msg_data['body'] = msg_body
-        print(msg_data)
-
     def retrieve_message(self, msg_id, msg_size):
         msg_info = self.__send_cmd(f"RETR {msg_id}")
         size_readed = 0
@@ -218,7 +188,7 @@ class POPClient:
             self.__send_cmd("QUIT", no_response=True)
 
             self.close()
-            return 0
+            return msg_count
         except POPClientException as e:
             self.__logfile.write_log(f"POPClientException: {e}", msg_type="ERROR")
             return 1
